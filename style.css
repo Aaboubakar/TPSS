@@ -1,0 +1,15 @@
+
+.titre-debut{
+    color: greenyellow;
+}
+table{
+    border-collapse: collapse;
+    border: 1px;
+    border-color: black;
+}
+td, th{
+    border: 1px solid #333;
+}
+div{
+    align-content: center;
+}
