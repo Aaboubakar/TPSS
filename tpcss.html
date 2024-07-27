@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cours CSS</title>
+    <style>
+
+ 
+.topbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background: #FFF;
+    padding: 30px;
+    z-index: 3;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, .1);
+}
+
+.topbar nav {
+    float: left;
+}
+
+.topbar nav a {
+    color:#9F9F9F;
+    text-decoration: none;
+    font-weight: 500;
+    margin: 0 53px;
+}
+
+.topbar nav a:hover, .topbar nav a.active {
+    color: #000;
+}
+
+.social {
+    float: right;
+}
+
+.social a {
+    padding: 10px;
+    opacity: .5;
+}
+
+.social a:hover {
+    opacity: 1;
+}
+
+
+
+        /* * {
+    margin: 0;
+    padding: 0;
+} */
+
+body {
+    background: no-repeat url(img/10000codeur.jpg) center/cover;
+    /* VH = 100% de la taille de l'ecran (viewport height) */
+    min-height: 100vh;
+}
+
+h1 {
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    text-align: center;
+    text-shadow: 1px 2px 3px #0000009c;
+    color: #ab0ef4;
+    padding: 15px;
+}
+
+main {
+    min-height: 500px;
+    width: 90%;
+    background: rgba(245, 245, 245, 0.9);
+    margin: 0 auto;
+    border: 2px solid rgb(0, 140, 255);
+    border-radius: 20px;
+    box-shadow: 0px 0px 20px 4px #81cfc6;
+    padding: 15px;
+}
+
+h2 {
+    margin: 0;
+}
+
+/* FLEXBOX */
+
+.flexbox, .grid, .absolute {
+    border: 2px solid skyblue;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 20px;
+    min-height: 150px;
+}
+
+.flexbox ul {
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+.flexbox li {
+    list-style: none;
+    height: 160px;
+    width: 160px;
+    margin: 10px;
+    background: turquoise;
+    display: flex;
+    /* text-align: center; */
+    justify-content: center;
+    align-items: center;
+}
+
+/* GRID */
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 30% 70%;
+}
+
+.grid img {
+    width: 50%;
+    margin: 20px auto;
+    display: block;
+}
+
+form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: "i1 i2" "ta ta" "vi bt";
+}
+
+input, textarea {
+    margin: 5px;
+    border: 1px solid darkblue;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+textarea {
+    grid-area: ta;
+    height: 40px;
+    resize: none;
+}
+
+#bt-submit {
+    grid-area: bt;
+    cursor: pointer;
+    background: cyan;
+    transition: 0.2s;
+    
+}
+
+#bt-submit:hover {
+    background: darkblue;
+    color: white;
+}
+
+/* ABSOLUTE */
+
+.absolute {
+    position: relative;
+}
+
+#cercle1 {
+    height: 80px;
+    width: 80px;
+    border-radius: 150px;
+    background: skyblue;
+    position: absolute;
+    top: -40px;
+    right: -40px;
+}
+
+#cercle2 {
+    height: 60px;
+    width: 60px;
+    border-radius: 150px;
+    background: blueviolet;
+    position: absolute;
+    top: -40px;
+    left: -40px;
+}
+
+#cercle3 {
+    height: 40px;
+    width: 40px;
+    border-radius: 150px;
+    background: teal;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 100px;
+}
+
+/* RESPONSIVE */
+
+@media screen and (max-width: 900px) {
+    body {
+        background: red;
+    }
+
+    .grid-container {
+        display: block;
+        
+    }
+
+    .grid img {
+        width: 40%;
+    }
+    
+
+}
+
+@media screen and (max-width: 600px) {
+
+    .flexbox ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    form {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas: "i1" "i2" "ta" "bt";
+    }
+
+    input, textarea {
+        font-size: 0.8rem;
+    }
+
+
+}
+    </style>
+</head>
+<body>
+        <header class="topbar">
+            <nav>
+                <a href="index.html">Accueil</a>
+                <a href="article.html" class="active">Articles</a>
+                <a href="tp10000codeurs.html">TP 10000 codeurs</a>
+                <a href="tpcss.html">TP CSS</a>
+            </nav>
+            <div class="social">
+                <a href="" title="Facebook"><img src="img/facebook.png" title="Facebook"></a>
+                <a href="" title="Twitter"><img src="img/twitter.png" title="Twitter"></a>
+            </div>
+        </header>
+        <h1>Les bases de CSS</h1>
+    <main>
+        <div class="flexbox">
+            <h2>Flexbox</h2>
+            <ul>
+                <li>Boite 1</li>
+                <li>Boite 2</li>
+                <li>Boite 3</li>
+            </ul>
+        </div>
+
+        <div class="grid">
+            <h2>Grid</h2>
+            <div class="grid-container">
+                <img src="img/css-logo.png" alt="logo css">
+
+                <form action="">
+                    <input type="text" id="firstname" placeholder="Prénom">
+                    <input type="text" id="surname" placeholder="Nom">
+                    <textarea cols="30" rows="10" placeholder="Ici votre message"></textarea>
+                    <input type="submit" value="Valider" id="bt-submit">
+                </form>
+            </div>
+        </div>
+
+        <div class="absolute">
+            <h2>Absolute</h2>
+            <span id="cercle1"></span>
+            <span id="cercle2"></span>
+            <span id="cercle3"></span>
+        </div>
+    </main>
+</body>
+</html>
